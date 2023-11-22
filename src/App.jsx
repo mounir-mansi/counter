@@ -1,12 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-
-const Button = ({ increment, onClickFunction }) => {
-  const handleClick = () => {
-    onClickFunction(increment)
-  }
-  return <button onClick={handleClick}>{increment}</button>
-}
+import Button from './components/Button'
 
 
 
@@ -20,10 +14,12 @@ function App() {
 
   return (
     <div>
-      <Button increment={1} onClickFunction={upCount} />
-      <Button increment={-1} onClickFunction={upCount} />
-
+      <h2>Compteur</h2>
       <span>{count}</span>
+      <div>
+        <Button increment={-1} onClickFunction={upCount} />
+        <Button increment={1} onClickFunction={upCount} />
+      </div>
     </div>
   )
 }
